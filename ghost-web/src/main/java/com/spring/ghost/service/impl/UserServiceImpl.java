@@ -24,10 +24,9 @@ public class UserServiceImpl implements UserService {
         example.createCriteria().andUsernameEqualTo(user.getUsername());
         example.or().andMobileEqualTo(user.getMobile());
         List<Users> users = userMapper.selectByExample(example);
-        if (users.isEmpty()) {
+        if (!users.isEmpty()) {
             userMapper.insert(user);
         }
-
         return true;
     }
 
