@@ -7,5 +7,5 @@ public interface UserService {
 
     boolean register(Users user) throws UserException;
 
-    Users login(Users user) throws UserException;
+    Users login(String username, String password) throws UserException;
 }
